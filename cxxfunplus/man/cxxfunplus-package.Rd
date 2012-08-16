@@ -3,12 +3,13 @@
 \alias{cxxfunplus}
 \docType{package}
 \title{
-What the package does (short line)
-~~ package title ~~
+cxxfunplus: save the dynamic shared objects for call cxxfunction
 }
 \description{
-More about what it does (maybe more than one line)
-~~ A concise (1-5 lines) description of the package ~~
+The cxxfunction function in \pkg{inline} could not save 
+the dynamic shared objects (DSO) created in a session. 
+We provide a mechanism to save the DSO's if for 
+example, \code{save.image} is called. 
 }
 \details{
 \tabular{ll}{
@@ -16,27 +17,17 @@ Package: \tab cxxfunplus\cr
 Type: \tab Package\cr
 Version: \tab 1.0\cr
 Date: \tab 2012-08-16\cr
-License: \tab What license is it under?\cr
+License: \tab AGPL-3 \cr
 }
-~~ An overview of how to use the package, including the most important ~~
-~~ functions ~~
+Instead of calling cxxfunction in \pkg{inline}, call \code{cxxfunplus} 
+in this package. 
 }
 \author{
-Who wrote it
+Jiqiang Guo <guojq28@gmail.com>
 
-Maintainer: Who to complain to <yourfault@somewhere.net>
-~~ The author and/or maintainer of the package ~~
+Maintainer: Jiqiang Guo <guojq28@gmail.com>
 }
-\references{
-~~ Literature or other references for background information ~~
-}
-~~ Optionally other standard keywords, one per line, from file KEYWORDS in ~~
-~~ the R documentation directory ~~
-\keyword{ package }
+\keyword{package}
 \seealso{
-~~ Optional links to other man pages, e.g. ~~
-~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
-}
-\examples{
-~~ simple examples of the most important functions ~~
+\code{\link[inline:inline-package]{inline}}
 }

@@ -1,11 +1,10 @@
 \name{cxxfunplus}
 \alias{cxxfunplus}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+cxxfunplus
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+cxxfunplus, save DSO created in inline 
 }
 \usage{
 cxxfunplus()
@@ -46,7 +45,4 @@ function ()
 {
   }
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{cxxfunplus} 
