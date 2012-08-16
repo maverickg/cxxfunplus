@@ -1,0 +1,2 @@
+cxxfunplus <-
+function() {}
