@@ -1,48 +1,36 @@
-\name{cxxfunplus}
-\alias{cxxfunplus}
-\title{
-cxxfunplus
-}
+\name{cxxfunctionplus}
+\alias{cxxfunctionplus}
+\title{To created an S4 class \code{cxxdso} from C++ code}
 \description{
-cxxfunplus, save DSO created in inline 
+  This is a wrap-up of function \code{cxxfunction} in package \pkg{inline}. 
+  Additionally, this function returns an object of class \code{cxxdso},
+  which could be saved and reused across R sessions. All arguments except
+  \code{save.dso} are passed to function \code{cxxfunction}. 
 }
 \usage{
-cxxfunplus()
+cxxfunctionplus(sig = character(), body = character(), 
+                plugin = "default", includes = "", 
+                settings = getPlugin(plugin), 
+                save.dso = FALSE, ..., verbose = FALSE)
 }
-%- maybe also 'usage' for other objects documented here.
-\details{
-%%  ~~ If necessary, more details than the description above ~~
+\arguments{
+  \item{sig}{Signature of the function. A named character vector}
+  \item{body}{A character vector with C++ code to include in the body of the compiled C++ function}
+  \item{plugin}{Name of the plugin to use. See \code{\link[inline:getPlugin]{getPlugin}} for details about plugins. }
+  \item{includes}{User includes, inserted after the includes provided by the plugin. }
+  \item{settings}{Result of the call to the plugin}
+  \item{save.dso}{Determine whether to save the compiled code (DSO).} 
+  \item{\dots}{Further arguments to the plugin}
+  \item{verbose}{verbose output}
 }
-\value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
-\references{
-%% ~put references to the literature/web site here ~
-}
-\author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
-}
+\value{An object of S4 class \code{cxxdso}.} 
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
+\examples{\dontrun{
+dso <- cxxfunctionplus(signature(x = "integer", y = "numeric"), 'return ScalarReal(INTEGER(x)[0] * REAL(y)[0]);')
+show(dso)
+}}
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+  \code{\link[inline:cxxfunction]{cxxfunction}} and \code{\linkS4class{cxxdso}} 
 }
-\examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
 
-## The function is currently defined as
-function () 
-{
-  }
-}
-\keyword{cxxfunplus} 

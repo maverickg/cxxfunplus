@@ -1,1 +1,5 @@
-exportPattern("^[[:alpha:]]+")
+#import("methods")
+importFrom("inline", getDynLib) 
+export(cxxfunctionplus, is.null.cxxfun)
+exportClasses(cxxdso)
+exportMethods(getDynLib, is.dso.loaded) 

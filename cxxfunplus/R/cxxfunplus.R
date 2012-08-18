@@ -13,9 +13,10 @@ read.dso <- function(path) {
   readBin(path, what = 'raw', n = n)
 } 
 
-cxxfunplus <- function(sig = character(), body = character(),
-                       plugin = "default", includes = "",
-                       settings = getPlugin(plugin), save.dso = FALSE, ..., verbose = FALSE) {
+cxxfunctionplus <- function(sig = character(), body = character(),
+                            plugin = "default", includes = "",
+                            settings = getPlugin(plugin), 
+                            save.dso = FALSE, ..., verbose = FALSE) {
   fx <- cxxfunction(sig = sig, body = body, plugin = plugin, includes = includes, 
                     settings = settings, ..., verbose = verbose)
   dso.last.path <- dso.path(fx)
@@ -28,6 +29,7 @@ cxxfunplus <- function(sig = character(), body = character(),
   dso <- new('cxxdso', sig = sig, dso.saved = save.dso, 
              dso.filename = dso.filename, 
              dso.bin = dso.bin, 
+             system = R.version$system, 
              .MISC = new.env()) 
   assign("cxxfun", fx, envir = dso@.MISC)
   assign("dso.last.path", dso.last.path, envir = dso@.MISC)

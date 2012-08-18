@@ -72,7 +72,7 @@ cxxfun.from.dll <- function(sig, code, DLL, check.dll = TRUE) {
   if (check.dll) {
     dlls <- getLoadedDLLs()
     if (!f %in% names(dlls)) 
-      stop(paste("dso ", dll[['path']], " is not loaded", sep = ''))
+      stop(paste("dso ", DLL[['path']], " is not loaded", sep = ''))
   } 
 
   res <- vector("list", length(sig))

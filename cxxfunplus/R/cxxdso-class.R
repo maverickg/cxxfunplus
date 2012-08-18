@@ -4,14 +4,15 @@ setClass(Class = "cxxdso",
            sig = "list", # A list of function signature that would be returned by cxxfuncion 
            dso.saved = "logical", # flag for if the dso is saved or not
            # dso.last.path = 'character', # where the dso is saved last time 
-           dso.filename = 'character', # the dso file name when it is created the first time
+           dso.filename = "character", # the dso file name when it is created the first time
            dso.bin = "raw", # the DSO read to R by readBin with mode of 'raw' 
+           system = "character", # what is the OS (R.version$system)?  
            .MISC = "environment" # an envir to save 
                                  #  1. the returned object by cxxfuncion using name cxxfun 
                                  #  2. the file path used last time using name dso.last.path 
          ),
          validity = function(object) {
-           return(length(object@sig) > 0)
+           length(object@sig) > 0 && identical(object@system, R.version$system)
          })
 
 setGeneric(name = "grab.cxxfun",
@@ -52,12 +53,14 @@ setMethod('grab.cxxfun', signature(object = "cxxdso"),
             f <- sub("\\.[^.]*$", "", basename(object@dso.filename)) 
             f2 <- sub("\\.[^.]*$", "", basename(object@.MISC$dso.last.path)) 
             dlls <- getLoadedDLLs()
-            if(f2 %in% names(dlls)) { # still loaded 
+            if (f2 %in% names(dlls)) { # still loaded 
               DLL <- dlls[[f2]] 
               return(cxxfun.from.dll(object@sig, object@.MISC$cxxfun@code, DLL, check.dll = FALSE)) 
             }
             
             # not loaded  
+            if (!identical(object@system, R.version$system)) 
+              stop(paste("the saved cxxdso is created on system '", object@system, "'", sep = ''))
             cx <- cxxfun.from.dso.bin(object) 
             assign('cxxfun', cx, object@.MISC) 
             return(cx) 

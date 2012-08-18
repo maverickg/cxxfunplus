@@ -3,8 +3,11 @@ Type: Package
 Title: extend cxxfunction by saving the dynamic shared objects
 Version: 1.0
 Date: 2012-08-16
+Depends: R (>= 2.4.0), methods
+Imports: methods 
+Suggests: Rcpp (>= 0.8.0)
 Author: Jiqiang Guo <guojq28@gmail.com>
 Maintainer: Jiqiang Guo <guojq28@gmail.com>
-Description: extend cxxfunction by saving the dynamic shared objects so it could be saved for reusing acrossing R sessions 
+Description: extend cxxfunction by saving the dynamic shared objects for reusing across R sessions 
 Depends: inline
-License: AGPL-3 
+License: GPL-3 
