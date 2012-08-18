@@ -24,9 +24,10 @@ setGeneric(name = "is.dso.loaded",
 setMethod("show", "cxxdso", 
           function(object) {
             cat("S4 class cxxdso: dso.saved = ", object@dso.saved, 
-                ", dso.filename = ", object@dso.filename, ".\n", sep = '')  
+                ", dso.filename = ", object@dso.filename, 
+                ", size = ", obj.size.str(object.size(object)), ".\n", sep = '')  
             cat("And dso.last.path = '", object@.MISC$dso.last.path, "'.\n", sep = '')
-            cat("Created on :", object@system, ".", sep = '')
+            cat("Created on: ", object@system, ".\n", sep = '')
             cat("Loaded now: ", is.dso.loaded(object), ".\n", sep = '')
             cat("The signatures is/are as follows: \n")
             print(object@sig); 

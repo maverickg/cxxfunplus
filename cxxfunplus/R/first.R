@@ -5,6 +5,13 @@ file_ext <- function(x) {
   ifelse(pos > -1L, substring(x, pos + 1L), "")
 }
 
+obj.size.str <- function(x) {
+  if (x >= 1024^3)       return(paste(round(x/1024^3, 1L), "Gb"))
+  else if (x >= 1024^2)  return(paste(round(x/1024^2, 1L), "Mb"))
+  else if (x >= 1024)    return(paste(round(x/1024, 1L), "Kb"))
+  return(paste(x, "bytes")) 
+} 
+
 # not needed anymore since we have is.loaded in package:base,
 # which is unknown to me before.
 # 
