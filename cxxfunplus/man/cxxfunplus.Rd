@@ -26,7 +26,8 @@ cxxfunctionplus(sig = character(), body = character(),
 \value{An object of S4 class \code{cxxdso}.} 
 
 \examples{\dontrun{
-dso <- cxxfunctionplus(signature(x = "integer", y = "numeric"), 'return ScalarReal(INTEGER(x)[0] * REAL(y)[0]);')
+src <-  ' return ScalarReal(INTEGER(x)[0] * REAL(y)[0]);'
+dso <- cxxfunctionplus(signature(x = "integer", y = "numeric"), src)
 show(dso)
 }}
 

@@ -23,6 +23,7 @@
 \examples{
 \dontrun{
 dso <- cxxfunctionplus(signature(), "return R_NilValue;")
-dll <- grab.cxxfun(dso)
+fx <- grab.cxxfun(dso)
+fx()
 }} 
 

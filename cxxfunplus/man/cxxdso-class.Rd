@@ -15,7 +15,7 @@
 \section{Slots}{
   \describe{
     \item{\code{sig}:}{Object of class \code{"list"} The signatures of functions defined.}
-    \item{\code{dso.saved}:}{Object of class \code{"logical"} Whether to save the dso or not.}
+    \item{\code{dso.saved}:}{Object of class \code{"logical"} Whether to save the DSO or not.}
     \item{\code{dso.filename}:}{Object of class \code{"character"} The original file name for the DSO when it is created (no extension).}
     \item{\code{dso.bin}:}{Object of class \code{"raw"} The raw vector containing the DSO if \code{dso.saved} is \code{TRUE}}
     \item{\code{system}:}{The operating system where the object is created.} 

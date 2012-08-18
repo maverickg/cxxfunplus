@@ -1,8 +1,8 @@
 \name{is.null.cxxfun}
 \alias{is.null.cxxfun}
 \title{Tell if the address of functions created by \code{cxxfunction} 
-       points to NULL. 
-}
+       points to NULL}
+
 \description{
   The function object returned by \code{cxxfunction} cannot be 
   saved across R sessions. This function can be used to see

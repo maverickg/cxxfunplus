@@ -21,6 +21,6 @@
 \examples{
 \dontrun{
 dso <- cxxfunctionplus(signature(), "return R_NilValue ;")
-dll <- is.dso.loaded(dso)
+print(is.dso.loaded(dso))
 }} 
 

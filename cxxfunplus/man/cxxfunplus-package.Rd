@@ -3,7 +3,7 @@
 \alias{cxxfunplus}
 \docType{package}
 \title{
-cxxfunplus: save the dynamic shared objects for cxxfunction
+cxxfunplus: save the dynamic shared objects (DSO) for cxxfunction
 }
 \description{
   The cxxfunction function in \pkg{inline} could not save 
@@ -20,7 +20,7 @@ Date: \tab 2012-08-16\cr
 License: \tab GPL-3 \cr
 }
 Instead of calling cxxfunction in \pkg{inline}, call \code{cxxfunctionplus} 
-in this package, from which A S4 class of \code{cxxdso} is returned.  
+in this package, from which an S4 class of \code{cxxdso} is returned.  
 We could use generic function \code{grab.cxxfun} of class \code{cxxdso}
 to retrieve the functions typically returned by \code{cxxfunction}. 
 }
