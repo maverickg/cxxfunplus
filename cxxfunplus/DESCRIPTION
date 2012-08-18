@@ -6,4 +6,5 @@ Date: 2012-08-16
 Author: Jiqiang Guo <guojq28@gmail.com>
 Maintainer: Jiqiang Guo <guojq28@gmail.com>
 Description: extend cxxfunction by saving the dynamic shared objects so it could be saved for reusing acrossing R sessions 
+Depends: inline
 License: AGPL-3 

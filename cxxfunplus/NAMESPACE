@@ -1,2 +1,1 @@
-useDynLib(cxxfunplus)
 exportPattern("^[[:alpha:]]+")
