@@ -26,6 +26,7 @@ setMethod("show", "cxxdso",
             cat("S4 class cxxdso: dso.saved = ", object@dso.saved, 
                 ", dso.filename = ", object@dso.filename, ".\n", sep = '')  
             cat("And dso.last.path = '", object@.MISC$dso.last.path, "'.\n", sep = '')
+            cat("Created on :", object@system, ".", sep = '')
             cat("Loaded now: ", is.dso.loaded(object), ".\n", sep = '')
             cat("The signatures is/are as follows: \n")
             print(object@sig); 
