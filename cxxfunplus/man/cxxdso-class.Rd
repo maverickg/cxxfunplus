@@ -34,6 +34,7 @@
 }
 
 \seealso{
+\code{\link{getDynLib}}, \code{\link{grab.cxxfun}}, and 
 \code{\link{cxxfunctionplus}} 
 }
 \examples{

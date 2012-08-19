@@ -31,5 +31,6 @@ Maintainer: Jiqiang Guo <guojq28@gmail.com>
 }
 \keyword{package}
 \seealso{
+\code{\link{cxxfunctionplus}}, 
 \code{\link[inline:inline-package]{inline}}
 }

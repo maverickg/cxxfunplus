@@ -62,13 +62,12 @@ setMethod('grab.cxxfun', signature(object = "cxxdso"),
             
             # not loaded  
             if (!identical(object@system, R.version$system)) 
-              stop(paste("the saved cxxdso is created on system '", object@system, "'", sep = ''))
+              stop(paste("this cxxdso object was created on system '", object@system, "'", sep = ''))
             cx <- cxxfun.from.dso.bin(object) 
             assign('cxxfun', cx, object@.MISC) 
             return(cx) 
           }) 
 
-require(inline)
 setMethod("getDynLib", signature(x = "cxxdso"),
           function(x) { 
             fx <- grab.cxxfun(x) 
