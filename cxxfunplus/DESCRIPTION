@@ -11,3 +11,4 @@ Maintainer: Jiqiang Guo <guojq28@gmail.com>
 Description: extend cxxfunction by saving the dynamic shared objects for reusing across R sessions 
 Depends: inline
 License: GPL-3 
+URL: https://github.com/maverickg/cxxfunplus
