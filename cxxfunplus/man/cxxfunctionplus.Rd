@@ -14,14 +14,14 @@ cxxfunctionplus(sig = character(), body = character(),
                 save.dso = FALSE, ..., verbose = FALSE)
 }
 \arguments{
-  \item{sig}{Signature of the function. A named character vector}
-  \item{body}{A character vector with C++ code to include in the body of the compiled C++ function}
+  \item{sig}{Signature of the function. A named character vector.}
+  \item{body}{A character vector with C++ code to include in the body of the compiled C++ function.}
   \item{plugin}{Name of the plugin to use. See \code{\link[inline:getPlugin]{getPlugin}} for details about plugins. }
   \item{includes}{User includes, inserted after the includes provided by the plugin. }
-  \item{settings}{Result of the call to the plugin}
-  \item{save.dso}{Determine whether to save the compiled code (DSO).} 
-  \item{\dots}{Further arguments to the plugin}
-  \item{verbose}{verbose output}
+  \item{settings}{Result of the call to the plugin.}
+  \item{save.dso}{Determine whether to save the compiled code (DSO); defaults to \code{FALSE}.} 
+  \item{\dots}{Further arguments to the plugin.}
+  \item{verbose}{verbose output.}
 }
 \value{An object of S4 class \code{cxxdso}.} 
 

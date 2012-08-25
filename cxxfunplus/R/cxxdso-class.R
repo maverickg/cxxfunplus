@@ -5,11 +5,14 @@ setClass(Class = "cxxdso",
            dso.saved = "logical", # flag for if the dso is saved or not
            # dso.last.path = 'character', # where the dso is saved last time 
            dso.filename = "character", # the dso file name when it is created the first time
-           dso.bin = "raw", # the DSO read to R by readBin with mode of 'raw' 
            system = "character", # what is the OS (R.version$system)?  
            .MISC = "environment" # an envir to save 
                                  #  1. the returned object by cxxfuncion using name cxxfun 
                                  #  2. the file path used last time using name dso.last.path 
+                                 #  3. The binary dso with name dso.bin, which is a raw vector.  
+                                 #     We put it here since the environment is not copied 
+                                 #     when assigned to another 
+                                 #     http://cran.r-project.org/doc/manuals/R-lang.html#Environment-objects
          ),
          validity = function(object) {
            length(object@sig) > 0 && identical(object@system, R.version$system)
@@ -25,7 +28,7 @@ setMethod("show", "cxxdso",
           function(object) {
             cat("S4 class cxxdso: dso.saved = ", object@dso.saved, 
                 ", dso.filename = ", object@dso.filename, 
-                ", size = ", obj.size.str(object.size(object)), ".\n", sep = '')  
+                ", size = ", obj.size.str(object.size(object@.MISC$dso.bin)), ".\n", sep = '')  
             cat("And dso.last.path = '", object@.MISC$dso.last.path, "'.\n", sep = '')
             cat("Created on: ", object@system, ".\n", sep = '')
             cat("Loaded now: ", is.dso.loaded(object), ".\n", sep = '')
