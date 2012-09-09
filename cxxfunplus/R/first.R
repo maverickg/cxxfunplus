@@ -5,7 +5,7 @@ file_ext <- function(x) {
   ifelse(pos > -1L, substring(x, pos + 1L), "")
 }
 
-obj.size.str <- function(x) {
+obj_size_str <- function(x) {
   if (x >= 1024^3)       return(paste(round(x/1024^3, 1L), "Gb"))
   else if (x >= 1024^2)  return(paste(round(x/1024^2, 1L), "Mb"))
   else if (x >= 1024)    return(paste(round(x/1024, 1L), "Kb"))
@@ -54,7 +54,7 @@ obj.size.str <- function(x) {
 #   
 ###############################################################
 
-is.null.cxxfun <- function(cx) {
+is_null_cxxfun <- function(cx) {
   # Tell if the returned object from cxxfunction in package inline
   # contains null pointer 
   env <- environment(cx@.Data)

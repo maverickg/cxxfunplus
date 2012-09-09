@@ -1,11 +1,11 @@
-\name{is.dso.loaded-methods}
+\name{is_dso_loaded-methods}
 \docType{methods}
-\alias{is.dso.loaded}
-\alias{is.dso.loaded-methods}
-\alias{is.dso.loaded,cxxdso-method}
+\alias{is_dso_loaded}
+\alias{is_dso_loaded-methods}
+\alias{is_dso_loaded,cxxdso-method}
 \title{Tell if a \code{cxxdso} object is loaded} 
 \description{
-  The \code{is.dso.loaded} function tell if the dynamic shared object (DSO, or DLL) in 
+  The \code{is_dso_loaded} function tell if the dynamic shared object (DSO, or DLL) in 
   an object of \code{cxxdso}, created by function \code{\link{cxxfunctionplus}}, 
   is loaded. 
 }
@@ -21,6 +21,6 @@
 \examples{
 \dontrun{
 dso <- cxxfunctionplus(signature(), "return R_NilValue ;")
-print(is.dso.loaded(dso))
+print(is_dso_loaded(dso))
 }} 
 

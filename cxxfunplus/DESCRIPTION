@@ -2,7 +2,7 @@ Package: cxxfunplus
 Type: Package
 Title: extend cxxfunction by saving the dynamic shared objects
 Version: 1.1
-Date: 2012-08-16
+Date: 2012-09-6
 Depends: R (>= 2.4.0), methods
 Imports: methods 
 Suggests: Rcpp (>= 0.8.0)

@@ -15,13 +15,13 @@ cxxfunplus: save the dynamic shared objects (DSO) for cxxfunction
 \tabular{ll}{
 Package: \tab cxxfunplus\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2012-08-16\cr
+Version: \tab 1.1\cr
+Date: \tab 2012-09-6\cr
 License: \tab GPL-3 \cr
 }
 Instead of calling cxxfunction in \pkg{inline}, call \code{cxxfunctionplus} 
 in this package, from which an S4 class of \code{cxxdso} is returned.  
-We could use generic function \code{grab.cxxfun} of class \code{cxxdso}
+We could use generic function \code{grab_cxxfun} of class \code{cxxdso}
 to retrieve the functions typically returned by \code{cxxfunction}. 
 }
 \author{

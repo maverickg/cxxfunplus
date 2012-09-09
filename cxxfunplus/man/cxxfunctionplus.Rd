@@ -5,13 +5,13 @@
   This is a wrap-up of function \code{cxxfunction} in package \pkg{inline}. 
   Additionally, this function returns an object of class \code{cxxdso},
   which could be saved and reused across R sessions. All arguments except
-  \code{save.dso} are passed to function \code{cxxfunction}. 
+  \code{save_dso} are passed to function \code{cxxfunction}. 
 }
 \usage{
 cxxfunctionplus(sig = character(), body = character(), 
                 plugin = "default", includes = "", 
                 settings = getPlugin(plugin), 
-                save.dso = FALSE, ..., verbose = FALSE)
+                save_dso = FALSE, ..., verbose = FALSE)
 }
 \arguments{
   \item{sig}{Signature of the function. A named character vector.}
@@ -19,7 +19,7 @@ cxxfunctionplus(sig = character(), body = character(),
   \item{plugin}{Name of the plugin to use. See \code{\link[inline:getPlugin]{getPlugin}} for details about plugins. }
   \item{includes}{User includes, inserted after the includes provided by the plugin. }
   \item{settings}{Result of the call to the plugin.}
-  \item{save.dso}{Determine whether to save the compiled code (DSO); defaults to \code{FALSE}.} 
+  \item{save_dso}{Determine whether to save the compiled code (DSO); defaults to \code{FALSE}.} 
   \item{\dots}{Further arguments to the plugin.}
   \item{verbose}{verbose output.}
 }

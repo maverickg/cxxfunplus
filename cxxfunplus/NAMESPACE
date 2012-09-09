@@ -1,5 +1,5 @@
 #import("methods")
 importFrom("inline", getDynLib) 
-export(cxxfunctionplus, is.null.cxxfun)
+export(cxxfunctionplus, is_null_cxxfun)
 exportClasses(cxxdso)
-exportMethods(getDynLib, is.dso.loaded, grab.cxxfun) 
+exportMethods(getDynLib, is_dso_loaded, grab_cxxfun) 
